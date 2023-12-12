@@ -68,3 +68,5 @@ As a software developer I have to create a program that is analyzing the financi
 - I have used a for loop to iterate through the finances array: inside the loop I have frist calculates the totalProfitLoss by summing up all the profit/loss amounts, then I have calculated the change in profit/loss between the current and previous months, updates the totalDifference variable with this difference, and tracks the greatest increase and decrease.
 
 - The next step was calculating the average change in profit or loss per interval between consecutive months in the data.
+
+- Finally displayed the financial report in the console, providing insights into the total months covered, total financial outcome, average change in profit/loss, and identifying the periods with the greatest increase and decrease in profit/loss.

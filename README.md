@@ -1,98 +1,70 @@
-# Unit 4 Challenge: Console Finances
+## UserStory
 
-## Overview
+As a software developer I have to create a program that is analyzing the financial records of a company.
 
-In this challenge, you'll be using the concepts you've learned to complete the required activity. This activity presents a real-world situation in which your newfound JavaScript skills will come in handy. You are tasked with creating code for analyzing the financial records of a company. You have been provided with a financial dataset in the `starter/index.js` file.
+## AcceptanceCriteria
 
-## Instructions
+- It is done when when the total number of months included in the dataset.
 
-1. Create a new GitHub repo called `Console-Finances`. Then, clone it to your computer.
+- It is done when the net total amount of Profit/Losses over the entire period.
 
-2. Copy the starter files in your local git repository.
+- It is done when the average of the changes in Profit/Losses over the entire period.
 
-You have been given a dataset composed of arrays with two fields, Date and Profit/Losses.
+- It is done when You will need to track what the total change in Profit/Losses are from month to month and then find the average. (Total/(Number of months - 1))
 
-Your task is to write JavaScript code that analyzes the records to calculate each of the following:
+- It is done when the greatest increase in Profit/Losses (date and amount) over the entire period.
 
-- The total number of months included in the dataset.
+- It is done when the greatest decrease in Profit/Losses (date and amount) over the entire period.
 
-- The net total amount of Profit/Losses over the entire period.
+## PseudoCode
 
-- The average of the **changes** in Profit/Losses over the entire period.
+// You have been given a dataset composed of arrays with two fields, Date and Profit / Losses.
 
-  - You will need to track what the total change in Profit/Losses are from month to month and then find the average.
-  - (`Total/(Number of months - 1)`)
+// Your task is to write JavaScript code that analyzes the records to calculate each of the following:
 
-- The greatest increase in Profit/Losses (date and amount) over the entire period.
+// The total number of months included in the dataset.
+// finances.length
 
-- The greatest decrease in Profit/Losses (date and amount) over the entire period.
+// The net total amount of Profit / Losses over the entire period.
+// Need a variable for Profits/Losses
+// Need to be able to compare the data for the loop that we're on to the data from the previous loop
+// Need variables for current & previous once we start the loop
+// Need an if statement to make sure we're on at least month 2 (array index 1) before starting to figure profits & losses
 
-When you open your code in the browser your resulting analysis should look similar to the following:
+// The average of the changes in Profit / Losses over the entire period.
+// -Need a variable to track the average change
+// -That will make use of the current & previous variables we set up before
+// -You will need to track what the total change in Profit / Losses are from month to month and then find the average.
+// (Total / (Number of months - 1))
 
-```text
-Financial Analysis
-----------------
-Total Months: 86
-Total: $38382578
-Average Change: -2315.12
-Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
-Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
-```
+// The greatest increase in Profit / Losses(date and amount) over the entire period.
+// -Need a variable for the greatest increase
+// -On each iteration, compare the current change in profits/losses to what's currently stored
+// -If the change is more, replace what's currently stored in the variable
 
-Your final code should print the analysis to the console.
+// The greatest decrease in Profit / Losses(date and amount) over the entire period.
+// - Need a variable for the greatest decrease
+// - On each iteration, compare the current change in profits/losses to what's currently stored
+// - If the loss is greater, replace what's currently stored in the variable
 
-**Hints:**
+// variables:
+// total number of months
+// rolling total of profits
+// greatest increase (month & amt)
+// greatest loss (month & amt)
+// average of the changes
 
-- You will need to do some research on your own for this project!
+// variables declared inside the loop:
+// current data point
+// previous data point
 
-- Remember, in order to combine strings and variables in the console you will need to use **concatenation**.
+## Solution
 
-- How do you only print to the nearest 100th in JavaScript?
+- I have startred the challange by frist creating the pseudocode. The problem has been broken down into
+  small steps in order to ease down the process of solving it.
 
-## Grading Requirements
+- The next step was to declera variable so later I can use them to store the the solution values.
 
-This homework is graded based on the following criteria:
+- I have used a for loop to iterate through the finances array: inside the loop I have frist calculates the totalProfitLoss by summing up all the profit/loss amounts, then I have calculated the change in profit/loss between the current and previous months, updates the totalDifference variable with this difference, and tracks the greatest increase and decrease.
 
-### Technical Acceptance Criteria: 40%
-
-- Satisfies all of the above acceptance criteria.
-
-### Deployment: 32%
-
-- Application deployed at live URL.
-
-- Application loads with no errors.
-
-- Application GitHub URL submitted.
-
-- GitHub repository contains application code.
-
-### Repository Quality: 23%
-
-- Repository has a unique name.
-
-- Repository follows best practices for file structure and naming conventions.
-
-- Repository follows best practices for variable naming conventions, indentation, quality comments, etc.
-
-- Repository contains multiple descriptive commit messages.
-
-- Repository contains quality README file with description, screenshot, and link to deployed application.
-
-### Application Quality: 5%
-
-- Application resembles the mock-up functionality provided in the Challenge instructions.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-- The URL of the deployed application.
-
-- The URL of the GitHub repository that contains your code. Give the repository a unique name and include a README file that describes the project.
-
----
-
-## Copyright
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+- The next step was calculating the average change in profit or loss per interval between consecutive months in the data.

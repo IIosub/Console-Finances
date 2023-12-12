@@ -122,10 +122,27 @@ for (let i = 0; i < finances.length; i++) {
       highestDecreaseDate = finances[i][0];
       //console.log(greatestDecreaseDate);
     }
+    // calculates the change in profit/loss between the current and previous months,
+    // updates the totalDifference variable with this difference, and tracks the
+    // greatest increase and decrease.
   }
 }
 
-//Avarage:
+//Avarage monthly profit change:
 
 const avarageProfitChange = totalChange / (totalMonths - 1);
 //console.log(avarageProfitChange);
+// calculates the average change in profit or loss per interval between
+//consecutive  months in the data.
+
+const formattedTotalPL = "$" + totalProfitLoss.toLocaleString();
+const formattedAvgChange = avarageProfitChange.toLocaleString("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+});
+//console.log(formattedAvgChange);
+//console.log(formattedTotalPL);
+
+//formattedTotalPL represents the formatted total sum of profit/loss
+//formattedAvgChange represents the formatted average change in profit/loss between consecutive months.

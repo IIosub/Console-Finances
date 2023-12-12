@@ -78,3 +78,5 @@ https://iiosub.github.io/Console-Finances/
 https://github.com/IIosub
 
 ## ScreenShoot
+<img width="1440" alt="Screenshot 2023-12-12 at 22 27 23" src="https://github.com/IIosub/Console-Finances/assets/114613610/f2c2c416-899d-499c-a52d-1c2bff549f79">
+

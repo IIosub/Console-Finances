@@ -70,3 +70,11 @@ As a software developer I have to create a program that is analyzing the financi
 - The next step was calculating the average change in profit or loss per interval between consecutive months in the data.
 
 - Finally displayed the financial report in the console, providing insights into the total months covered, total financial outcome, average change in profit/loss, and identifying the periods with the greatest increase and decrease in profit/loss.
+
+## Page URL and GitHub URL
+
+https://iiosub.github.io/Console-Finances/
+
+https://github.com/IIosub
+
+## ScreenShoot

@@ -91,10 +91,10 @@ const finances = [
 
 let totalMonths = finances.length;
 let totalProfitLoss = 0;
-let greatestIncreaseAmount = 0;
-let greatestIncreaseDate = "";
-let greatestDecreaseAmount = 0;
-let greatestDecreaseDate = "";
+let highestIncreaseAmount = 0;
+let highestIncreaseDate = "";
+let highestDecreaseAmount = 0;
+let highestDecreaseDate = "";
 let totalChange = 0;
 
 // for loop will iterate through the finances array:
@@ -111,16 +111,38 @@ for (let i = 0; i < finances.length; i++) {
     //console.log(totalChange);
 
     //console.log(totalChange);
-    if (profitChange > greatestIncreaseAmount) {
-      greatestIncreaseAmount = profitChange;
-      greatestIncreaseDate = finances[i][0];
+    if (profitChange > highestIncreaseAmount) {
+      highestIncreaseAmount = profitChange;
+      highestIncreaseDate = finances[i][0];
       //console.log(greatestIncreaseDate);
     }
 
-    if (profitChange < greatestDecreaseAmount) {
-      greatestDecreaseAmount = profitChange;
-      greatestDecreaseDate = finances[i][0];
+    if (profitChange < highestDecreaseAmount) {
+      highestDecreaseAmount = profitChange;
+      highestDecreaseDate = finances[i][0];
       //console.log(greatestDecreaseDate);
     }
+    // calculates the change in profit/loss between the current and previous months,
+    // updates the totalDifference variable with this difference, and tracks the
+    // greatest increase and decrease.
   }
 }
+
+//Avarage monthly profit change:
+
+const avarageProfitChange = totalChange / (totalMonths - 1);
+//console.log(avarageProfitChange);
+// calculates the average change in profit or loss per interval between
+//consecutive  months in the data.
+
+const formattedTotalPL = "$" + totalProfitLoss.toLocaleString();
+const formattedAvgChange = avarageProfitChange.toLocaleString("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+});
+//console.log(formattedAvgChange);
+//console.log(formattedTotalPL);
+
+//formattedTotalPL represents the formatted total sum of profit/loss
+//formattedAvgChange represents the formatted average change in profit/loss between consecutive months.

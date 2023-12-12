@@ -146,3 +146,21 @@ const formattedAvgChange = avarageProfitChange.toLocaleString("en-US", {
 
 //formattedTotalPL represents the formatted total sum of profit/loss
 //formattedAvgChange represents the formatted average change in profit/loss between consecutive months.
+
+console.log("Financial Analysis");
+console.log("------------------");
+console.log("Total Months:", totalMonths);
+console.log("Total:", formattedTotalPL);
+console.log("Average Change:", formattedAvgChange);
+console.log(
+  "Highest Increase in Profits/Losses:",
+  highestIncreaseDate,
+  "($" + highestIncreaseAmount.toLocaleString() + ")"
+);
+console.log(
+  "Highest Decrease in Profits/Losses:",
+  highestDecreaseDate,
+  "($" + highestIncreaseAmount.toLocaleString() + ")"
+);
+
+//display financial report in the console, providing insights into the total months covered, total financial outcome, average change in profit/loss, and identifying the periods with the greatest increase and decrease in profit/loss.

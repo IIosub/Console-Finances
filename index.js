@@ -160,7 +160,7 @@ console.log(
 console.log(
   "Highest Decrease in Profits/Losses:",
   highestDecreaseDate,
-  "($" + highestIncreaseAmount.toLocaleString() + ")"
+  "($" + highestDecreaseAmount.toLocaleString() + ")"
 );
 
 //display financial report in the console, providing insights into the total months covered, total financial outcome, average change in profit/loss, and identifying the periods with the greatest increase and decrease in profit/loss.
